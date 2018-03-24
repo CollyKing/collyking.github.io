@@ -346,6 +346,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10407.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/10407.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -469,7 +479,12 @@
           
   <div class="comments" id="comments">
     
-      <div id="vcomments"></div>
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="external nofollow noopener noreferrer" target="_blank">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -727,6 +742,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2018/10407.html';
+          this.page.identifier = '2018/10407.html';
+          this.page.title = 'linux环境下Hexo博客的恢复';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
 
 
 
@@ -748,21 +783,6 @@
 
 
 
-
-  
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/valine@1.1.6/dist/Valine.min.js"></script>
-  <script type="text/javascript">
-    new Valine({
-        av: AV,
-        el: '#vcomments' ,
-        verify: false,
-        notify: false,
-        app_id: 'bkpkIr9LF8yXdIwgSbybzFo8-gzGzoHsz',
-        app_key: 'BT3VkhllMRRtaOuOzzjbCNOL',
-        placeholder: 'Comment input placeholder'
-    });
-  </script>
 
 
 
