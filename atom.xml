@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-24T08:17:14.885Z</updated>
+  <updated>2018-03-24T13:45:38.139Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux环境下Hexo博客的恢复</title>
+    <link href="http://yoursite.com/2018/03/24/post/"/>
+    <id>http://yoursite.com/2018/03/24/post/</id>
+    <published>2018-03-24T13:41:05.000Z</published>
+    <updated>2018-03-24T13:45:38.139Z</updated>
+    
+    <content type="html"><![CDATA[<p>原本在Win下的博客由于使用环境太久没更新,修复过程出了各种bug,索性重新装了一次,顺便备份恢复到了现在常用的linux环境下(说得好像我会经常更新一样).在此简单说一下恢复的过程</p><hr><p><strong>环境:</strong></p><blockquote><p>os:Debian 9.3 stretch<br>git:2.11.0<br>node:8.9.3<br>npm:5.8.0<br>hexo-cli:1.1.0</p></blockquote><h2 id="1-关联github"><a href="#1-关联github" class="headerlink" title="1. 关联github"></a>1. 关联github</h2><h3 id="1-1-设置git"><a href="#1-1-设置git" class="headerlink" title="1.1 设置git"></a>1.1 设置git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"username"</span></span><br><span class="line">$ git config --global user.email <span class="string">"username@example.com"</span></span><br></pre></td></tr></table></figure><h3 id="设置git私钥"><a href="#设置git私钥" class="headerlink" title="设置git私钥"></a>设置git私钥</h3><p>安装openssh,生成SSHkey<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install openssh</span><br><span class="line">$ ssh-keygen -t rsa -b 4096 -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure></p><p>确保ssh-agent可运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-agent -s</span><br></pre></td></tr></table></figure></p><p>添加SSH key<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure></p><p>拷贝 ~/.ssh/id_rsa.pub 中的内容，然后，在 GitHub 右上方点击头像，选择 ”Settings”，在右边的 ”Personal settings” 侧边栏选择 ”SSH Keys”。点击 ”Add key” 按钮添加，接着粘贴 key。</p><p>测试:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure></p><h2 id="2-安装node-js和hexo"><a href="#2-安装node-js和hexo" class="headerlink" title="2.安装node.js和hexo"></a>2.安装node.js和hexo</h2><h3 id="2-1安装node-js"><a href="#2-1安装node-js" class="headerlink" title="2.1安装node.js"></a>2.1安装node.js</h3><p><strong>法1:</strong><br>安装nvm:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash</span><br></pre></td></tr></table></figure></p><p>重启Terminal,安装Node.js<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ nvm ls-remote</span><br><span class="line">$ nvm install v7.2.0</span><br></pre></td></tr></table></figure></p><p><strong>法2:</strong><br>包管理器安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install npm</span><br><span class="line">sudo apt install nodejs</span><br></pre></td></tr></table></figure></p><h3 id="2-2-安装Hexo"><a href="#2-2-安装Hexo" class="headerlink" title="2.2 安装Hexo"></a>2.2 安装Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo npm install -g hexo-cli      <span class="comment"># 注：这里不用 sudo 会报错</span></span><br></pre></td></tr></table></figure><h2 id="3-恢复hexo"><a href="#3-恢复hexo" class="headerlink" title="3. 恢复hexo"></a>3. 恢复hexo</h2><p>###3.1 初始化hexo<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></p><h3 id="3-2-拷贝所需文件"><a href="#3-2-拷贝所需文件" class="headerlink" title="3.2 拷贝所需文件"></a>3.2 拷贝所需文件</h3><ol><li>_config.yml</li><li>theme/</li><li>source/<h3 id="3-2-安装必要组件"><a href="#3-2-安装必要组件" class="headerlink" title="3.2 安装必要组件"></a>3.2 安装必要组件</h3>安装<code>hexo-deployer-git</code>,以使用hexo d部署到git上<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li></ol><p>安装hexo-generator-feed,以建立RSS订阅<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></p><p>安装hexo-generator-sitemap,以建立站点地图<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure></p><h2 id="3-验证"><a href="#3-验证" class="headerlink" title="3. 验证"></a>3. 验证</h2><p>进行发布部署<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure></p><p>若成功就说明大功告成了!</p><p><a href="http://irislr.me/2016/11/28/%E9%87%8D%E8%A3%85Linux%E5%90%8E%E7%9A%84Hexo%E5%8D%9A%E5%AE%A2%E7%8E%AF%E5%A2%83%E6%81%A2%E5%A4%8D/" target="_blank" rel="noopener">参考链接</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;原本在Win下的博客由于使用环境太久没更新,修复过程出了各种bug,索性重新装了一次,顺便备份恢复到了现在常用的linux环境下(说得好像我会经常更新一样).在此简单说一下恢复的过程&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;环境:&lt;/strong&gt;&lt;/p&gt;
+&lt;blockqu
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
