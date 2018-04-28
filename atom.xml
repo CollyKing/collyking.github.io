@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://collyking.top/"/>
-  <updated>2018-04-28T08:41:05.958Z</updated>
+  <updated>2018-04-28T08:42:00.678Z</updated>
   <id>https://collyking.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://collyking.top/2018/10767.html"/>
     <id>https://collyking.top/2018/10767.html</id>
     <published>2018-04-28T08:28:18.000Z</published>
-    <updated>2018-04-28T08:41:05.958Z</updated>
+    <updated>2018-04-28T08:42:00.678Z</updated>
     
     <content type="html"><![CDATA[<hr><p><strong>环境:</strong></p><blockquote><p>OS   macOS 10.13.3<br>型号 暗影精灵2pro<br>CPU  i5-7300HQ<br>GPU  HD630+GTX1050ti</p></blockquote><p><strong>操作流程</strong></p><ol><li>打开terminal,全局菜单中选择<code>Terminal</code> – <code>Preferences</code></li><li>单击<code>Profile</code>–<code>Keyboard</code>,找到<code>Action</code>对应为 <code>\033[3~</code>的forward delete key项</li><li>选择该项–<code>Edit</code>,输入<code>ctrl+option+D</code>动作(此时变为\004),替代快捷键.</li><li>完成</li></ol><p><a href="http://hints.macworld.com/article.php?story=20050525040921189" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a></p>]]></content>
     
