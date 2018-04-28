@@ -5,18 +5,40 @@
     
   <url>
     <loc>https://collyking.top/2018/10407.html</loc>
-    <lastmod>2018-03-25T04:32:50.538Z</lastmod>
+    <lastmod>2018-04-28T08:38:28.729Z</lastmod>
     <data>
         <display>
         <title>linux环境下Hexo博客的恢复</title>
         <pubTime>2018-03-24T13:41:05.000Z</pubTime>
         
-        <tag>hexo, linux</tag>
+        <tag>hexo</tag>
+         
+        <tag>linux</tag>
          
          
            
              
               <breadCrumb title="博客搭建" url="https://collyking.top/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://collyking.top/2018/10407.html</loc>
+    <lastmod>2018-04-28T08:38:22.797Z</lastmod>
+    <data>
+        <display>
+        <title>解决黑苹果在终端下delete键失效问题</title>
+        <pubTime>2018-04-28T08:28:18.000Z</pubTime>
+        
+        <tag>hackintosh</tag>
+         
+         
+           
+             
+              <breadCrumb title="hackintosh" url="https://collyking.top/categories/hackintosh/"/>
           
         </display>
     </data>
