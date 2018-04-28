@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="CollyKing&#39;s Blog">
 <meta property="og:description" content="本机环境下的backspace只能向前删除,向后删除普通文本编辑可用delete键,但是终端下不管用,只会打出&apos;~&apos;,本文旨在解决此问题">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-28T08:42:00.678Z">
+<meta property="og:updated_time" content="2018-04-28T08:46:01.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决黑苹果在终端下delete键失效问题">
 <meta name="twitter:description" content="本机环境下的backspace只能向前删除,向后删除普通文本编辑可用delete键,但是终端下不管用,只会打出&apos;~&apos;,本文旨在解决此问题">
@@ -397,12 +397,10 @@
 
       
         <hr>
-<p><strong>环境:</strong></p>
-<blockquote>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境:"></a>环境:</h2><blockquote>
 <p>OS   macOS 10.13.3<br>型号 暗影精灵2pro<br>CPU  i5-7300HQ<br>GPU  HD630+GTX1050ti</p>
 </blockquote>
-<p><strong>操作流程</strong></p>
-<ol>
+<h2 id="操作流程"><a href="#操作流程" class="headerlink" title="操作流程:"></a>操作流程:</h2><ol>
 <li>打开terminal,全局菜单中选择<code>Terminal</code> – <code>Preferences</code></li>
 <li>单击<code>Profile</code>–<code>Keyboard</code>,找到<code>Action</code>对应为 <code>\033[3~</code>的forward delete key项</li>
 <li>选择该项–<code>Edit</code>,输入<code>ctrl+option+D</code>动作(此时变为\004),替代快捷键.</li>
@@ -505,8 +503,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="https://i.loli.net/2017/08/24/599ea0e05f155.jpg" alt="collyking">
           <p class="site-author-name" itemprop="name">collyking</p>
@@ -575,6 +582,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作流程"><span class="nav-number">2.</span> <span class="nav-text">操作流程:</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
