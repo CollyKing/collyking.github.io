@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://collyking.top/"/>
-  <updated>2018-04-30T13:24:17.146Z</updated>
+  <updated>2018-04-30T13:28:43.036Z</updated>
   <id>https://collyking.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>「linux」解决问题No CMAKE_C_COMPILER could be found</title>
+    <title>「linux」解决No CMAKE_C_COMPILER could be found</title>
     <link href="https://collyking.top/2018/18134.html"/>
     <id>https://collyking.top/2018/18134.html</id>
     <published>2018-04-30T12:41:32.000Z</published>
-    <updated>2018-04-30T13:24:17.146Z</updated>
+    <updated>2018-04-30T13:28:43.036Z</updated>
     
     <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>关键报错如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-- The C compiler identification is unknown</span><br><span class="line">CMake Error at CMakeLists.txt:13 (project):</span><br><span class="line">  No CMAKE_C_COMPILER could be found.</span><br><span class="line"></span><br><span class="line">  Tell CMake <span class="built_in">where</span> to find the compiler by setting either the environment</span><br><span class="line">  variable <span class="string">"CC"</span> or the CMake cache entry CMAKE_C_COMPILER to the full path to</span><br><span class="line">  the compiler, or to the compiler name <span class="keyword">if</span> it is <span class="keyword">in</span> the PATH.</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">make: *** No targets specified and no makefile found.  Stop.</span><br></pre></td></tr></table></figure></p><p>提示找不到C/CXX compiler路径,搜了一下似乎常见于Visual studio问题,并找到方法多为以下1,2两种</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><ol><li><p>安装build-essential</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install build-essential</span><br></pre></td></tr></table></figure></li><li><p>安装g++</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install g++</span><br></pre></td></tr></table></figure></li><li><p>手动添加路径<br>若二者均已安装仍报错,那么找到gcc位置,手动添加下路径即可</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ whereis gcc</span><br><span class="line">gcc: /usr/bin/gcc /usr/lib/gcc </span><br><span class="line">$ <span class="built_in">export</span> CC=/usr/bin/gcc <span class="comment"># 视上一行输出填写路径</span></span><br></pre></td></tr></table></figure></li></ol><p>再次编译应该就能顺利完成了.</p><p><a href="https://www.techiediaries.com/ubuntu/no-cmake-cxx-compiler-could-be-found/" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a></p>]]></content>
     
