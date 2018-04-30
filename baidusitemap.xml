@@ -4,79 +4,27 @@
 
     
   <url>
-    <loc>https://collyking.top/2018/10767.html</loc>
-    <lastmod>2018-04-28T08:46:01.316Z</lastmod>
-    <data>
-        <display>
-        <title>解决黑苹果在终端下delete键失效问题</title>
-        <pubTime>2018-04-28T08:28:18.000Z</pubTime>
-        
-        <tag>hackintosh</tag>
-         
-         
-           
-             
-              <breadCrumb title="hackintosh" url="https://collyking.top/categories/hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://collyking.top/2018/10407.html</loc>
-    <lastmod>2018-04-28T08:45:54.100Z</lastmod>
+    <lastmod>2018-04-30T13:20:43.788Z</lastmod>
     <data>
         <display>
         <title>linux环境下Hexo博客的恢复</title>
         <pubTime>2018-03-24T13:41:05.000Z</pubTime>
         
-        <tag>hexo</tag>
+        <tag>blog</tag>
          
         <tag>linux</tag>
          
          
            
              
-              <breadCrumb title="博客搭建" url="https://collyking.top/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+              <breadCrumb title="blog" url="https://collyking.top/categories/blog/"/>
           
         </display>
     </data>
     </url>
 
     
-    
-  <url>
-    <loc>https://collyking.top/2017/32913.html</loc>
-    <lastmod>2018-03-24T14:21:21.327Z</lastmod>
-    <data>
-        <display>
-        <title>GMT笔记</title>
-        <pubTime>2017-09-04T11:22:22.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://collyking.top/2018/36546.html</loc>
-    <lastmod>2018-03-24T14:21:21.327Z</lastmod>
-    <data>
-        <display>
-        <title>paraview 安装教程</title>
-        <pubTime>2018-02-12T16:39:30.000Z</pubTime>
-        
-        <tag>pylith</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
     
 </urlset>
