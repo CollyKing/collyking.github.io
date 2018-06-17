@@ -101,15 +101,15 @@
 <meta name="description" content="本文将介绍如何利用global-geothermal数据,使用GMT5绘制成图,并附上脚本文件.">
 <meta name="keywords" content="GMT,geothermal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「gmt」利用GMT绘制全球热流值分布">
+<meta property="og:title" content="「GMT」利用GMT绘制全球热流值分布">
 <meta property="og:url" content="https://collyking.top/2018/39230.html">
 <meta property="og:site_name" content="CollyKing&#39;s Blog">
 <meta property="og:description" content="本文将介绍如何利用global-geothermal数据,使用GMT5绘制成图,并附上脚本文件.">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2018/06/17/5b265feff1f1e.png">
-<meta property="og:updated_time" content="2018-06-17T13:32:49.217Z">
+<meta property="og:updated_time" content="2018-06-17T13:39:37.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「gmt」利用GMT绘制全球热流值分布">
+<meta name="twitter:title" content="「GMT」利用GMT绘制全球热流值分布">
 <meta name="twitter:description" content="本文将介绍如何利用global-geothermal数据,使用GMT5绘制成图,并附上脚本文件.">
 <meta name="twitter:image" content="https://i.loli.net/2018/06/17/5b265feff1f1e.png">
 
@@ -147,7 +147,7 @@
 
 
 
-  <title>「gmt」利用GMT绘制全球热流值分布 | CollyKing's Blog</title>
+  <title>「GMT」利用GMT绘制全球热流值分布 | CollyKing's Blog</title>
   
 
 
@@ -301,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">「gmt」利用GMT绘制全球热流值分布</h1>
+          <h1 class="post-title" itemprop="name headline">「GMT」利用GMT绘制全球热流值分布</h1>
         
 
         <div class="post-meta">
@@ -364,7 +364,7 @@
 
           
           
-             <span id="/2018/39230.html" class="leancloud_visitors" data-flag-title="「gmt」利用GMT绘制全球热流值分布">
+             <span id="/2018/39230.html" class="leancloud_visitors" data-flag-title="「GMT」利用GMT绘制全球热流值分布">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -402,9 +402,9 @@
         <h1 id="模型基本信息"><a href="#模型基本信息" class="headerlink" title="模型基本信息"></a>模型基本信息</h1><ul>
 <li>全球热流数据是根据钻井,温泉,直接采样相关岩石计算导出的热流值.</li>
 <li>数据来源于NOAA的geothermal数据.</li>
-<li>下载数据视不同的路径格式可能为<code>.gmt</code>,<code>.xyz</code>格式<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1></li>
+<li>下载数据视不同的路径格式可能为<code>.gmt</code>,<code>.xyz</code>格式</li>
 </ul>
-<ol>
+<h1 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h1><ol>
 <li><p>初始参数设定</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">PS=plot/global_geothermal.ps</span><br><span class="line">in_gmt=data/Global.gmt</span><br><span class="line">in_xyz=data/global_heatflow.xyz</span><br><span class="line">R=-180/180/-90/90</span><br><span class="line">J=X18d/9d</span><br><span class="line">gmt psbasemap -R<span class="variable">$R</span> -J<span class="variable">$J</span> -B30 -X2c -Y2c -BwSEN -K &gt; <span class="variable">$PS</span>  <span class="comment">#设置底图参数</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -772,7 +772,7 @@
         var disqus_config = function () {
           this.page.url = 'https://collyking.top/2018/39230.html';
           this.page.identifier = '2018/39230.html';
-          this.page.title = '「gmt」利用GMT绘制全球热流值分布';
+          this.page.title = '「GMT」利用GMT绘制全球热流值分布';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://collyking.disqus.com/embed.js';
