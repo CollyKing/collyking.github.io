@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="CollyKing&#39;s Blog">
 <meta property="og:description" content="在学习pylith的过程中遇到了很多问题,在此记录备忘一些常见的错误和解决方案,供自己及他人来日参考,欢迎补充">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-09T04:53:16.574Z">
+<meta property="og:updated_time" content="2018-07-09T05:53:04.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「pylith」常见报错及解决方案(不定期更新)">
 <meta name="twitter:description" content="在学习pylith的过程中遇到了很多问题,在此记录备忘一些常见的错误和解决方案,供自己及他人来日参考,欢迎补充">
@@ -429,7 +429,7 @@
 </ol>
 <h2 id="Mesh-missing-group-of-vertices-‘-’-for-subdomain-output"><a href="#Mesh-missing-group-of-vertices-‘-’-for-subdomain-output" class="headerlink" title="Mesh missing group of vertices ‘***’ for subdomain output"></a>Mesh missing group of vertices ‘***’ for subdomain output</h2><p>在修改范例的geometry文档时,对应边界条件surface的ID号可能也会改变,需要在<code>mesh_***.jou</code>或<code>create_bc.jou</code>中,找到add group对应行,重新指定边界surface的ID号.<br>当然更好的办法是直接在创建surface的时候给其起好名字(如<code>name &#39;surface_example&#39;</code>),这样之后创建边界条件时,就可以指定其名字而非之后会变动的ID号了</p>
 <h2 id="Material-id-‘-‘-for-cell-‘-‘-does-not-match-the-id-of-any-available-materials-or-interfaces"><a href="#Material-id-‘-‘-for-cell-‘-‘-does-not-match-the-id-of-any-available-materials-or-interfaces" class="headerlink" title="Material id ‘*‘ for cell ‘*‘ does not match the id of any available materials or interfaces"></a>Material id ‘*‘ for cell ‘*‘ does not match the id of any available materials or interfaces</h2><p>这是由于读取的网格文件对应材料的<code>block ID</code>与<code>*.cfg</code>中确定问题时的<code>material ID</code>不匹配造成的,调整为相吻合的ID号即可</p>
-<h2 id="surface-has-no-facet"><a href="#surface-has-no-facet" class="headerlink" title="surface *** has no facet"></a>surface *** has no facet</h2><p>具体原因仍不明白,但个人摸索的办法是建立geometry时,对应surface的控制点坐标要尽量是整数,如50km,100km等,如果有找到好办法的欢迎评论告诉我.</p>
+<h2 id="Surface-has-no-facet"><a href="#Surface-has-no-facet" class="headerlink" title="Surface *** has no facet"></a>Surface *** has no facet</h2><p>具体原因仍不明白,但个人摸索的办法是建立geometry时,对应surface的控制点坐标要尽量是整数,如50km,100km等,如果有找到好办法的欢迎评论告诉我.</p>
 
       
     </div>
@@ -617,7 +617,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-solve-did-not-converge-due-to-DIVERGED-ITS-iterations-100"><span class="nav-number">1.</span> <span class="nav-text">Linear solve did not converge due to DIVERGED_ITS iterations 100</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Could-not-find-final-slip-at-using-spatial-database-Final-slip"><span class="nav-number">2.</span> <span class="nav-text">Could not find final slip at (  *) using spatial database Final slip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mesh-missing-group-of-vertices-‘-’-for-subdomain-output"><span class="nav-number">3.</span> <span class="nav-text">Mesh missing group of vertices ‘***’ for subdomain output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Material-id-‘-‘-for-cell-‘-‘-does-not-match-the-id-of-any-available-materials-or-interfaces"><span class="nav-number">4.</span> <span class="nav-text">Material id ‘*‘ for cell ‘*‘ does not match the id of any available materials or interfaces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#surface-has-no-facet"><span class="nav-number">5.</span> <span class="nav-text">surface *** has no facet</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-solve-did-not-converge-due-to-DIVERGED-ITS-iterations-100"><span class="nav-number">1.</span> <span class="nav-text">Linear solve did not converge due to DIVERGED_ITS iterations 100</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Could-not-find-final-slip-at-using-spatial-database-Final-slip"><span class="nav-number">2.</span> <span class="nav-text">Could not find final slip at (  *) using spatial database Final slip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mesh-missing-group-of-vertices-‘-’-for-subdomain-output"><span class="nav-number">3.</span> <span class="nav-text">Mesh missing group of vertices ‘***’ for subdomain output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Material-id-‘-‘-for-cell-‘-‘-does-not-match-the-id-of-any-available-materials-or-interfaces"><span class="nav-number">4.</span> <span class="nav-text">Material id ‘*‘ for cell ‘*‘ does not match the id of any available materials or interfaces</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Surface-has-no-facet"><span class="nav-number">5.</span> <span class="nav-text">Surface *** has no facet</span></a></li></ol></div>
             
 
           </div>
