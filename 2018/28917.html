@@ -112,7 +112,7 @@
 <meta property="og:image" content="http://ov395xwhy.bkt.clouddn.com/FjB3Yukx6S6q1NDqDS0BYCQX15R0.jpg">
 <meta property="og:image" content="http://ov395xwhy.bkt.clouddn.com/Fn1GaGTsiEIm668voOtPMuTjz4y6.png">
 <meta property="og:image" content="http://ov395xwhy.bkt.clouddn.com/FkmCWUN27pR_n_-GjqOxIsxpinKp.png">
-<meta property="og:updated_time" content="2018-08-04T12:41:48.764Z">
+<meta property="og:updated_time" content="2018-08-04T12:43:35.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「pylith」简单入门(一)--Trelis建立网格模型">
 <meta name="twitter:description" content="Pylith是一个进行有限元模型计算的命令行软件,但并不包括网格模型的建立,需要其他软件诸如Lagrit,Trelis/Cubit等来完成,本文将以Pylith的example/3d/Tet4为例,介绍如何使用Trelis建立简单的网格模型.">
@@ -445,7 +445,7 @@
 <h1 id="三-模型网格划分"><a href="#三-模型网格划分" class="headerlink" title="三.模型网格划分"></a>三.模型网格划分</h1><p>我们可以指定各个curve,surface或者volume的划分单元大小然后再进行网格划分.volume的网格划分方案默认为map,可使用<code>help volume scheme</code>或者通过command Panal查看所有的网格划分方案,在此采用tetmesh划分方案,可按需选择.<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">volume all scheme tetmesh </span><br><span class="line">curve all scheme default</span><br><span class="line">volume all size <span class="number">5000</span></span><br><span class="line">mesh volume all</span><br></pre></td></tr></table></figure></p>
 <div align="center"><br><img src="http://ov395xwhy.bkt.clouddn.com/FjB3Yukx6S6q1NDqDS0BYCQX15R0.jpg" width="50%" height="50%"><br></div>
 
-<p>完成网格划分后,建议进行网格质量检查,通常最小值要大于0.2才能够使Pylith进行快速稳定的迭代运算.可通过Command Panal<br><a href="">Command Panal</a><br>或者命令行<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quality volume all shape <span class="keyword">global</span> draw mesh</span><br></pre></td></tr></table></figure></p>
+<p>完成网格划分后,建议进行网格质量检查,通常最小值要大于0.2才能够使Pylith进行快速稳定的迭代运算.可通<br>过Command Panal或者命令行<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quality volume all shape <span class="keyword">global</span> draw mesh</span><br></pre></td></tr></table></figure></p>
 <p>进行Mesh Quality Check.本例的网格质量如下所示</p>
 <div align="center"><br><img src="http://ov395xwhy.bkt.clouddn.com/Fn1GaGTsiEIm668voOtPMuTjz4y6.png" width="50%" height="50%"><br></div>
 
