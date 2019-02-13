@@ -3,10 +3,31 @@
 
 
     
+  <url>
+    <loc>https://collyking.top/2018/39230.html</loc>
+    <lastmod>2019-02-13T15:17:26.408Z</lastmod>
+    <data>
+        <display>
+        <title>「GMT」利用GMT绘制全球热流值分布</title>
+        <pubTime>2018-06-17T13:28:51.000Z</pubTime>
+        
+        <tag>GMT</tag>
+         
+        <tag>geothermal</tag>
+         
+         
+           
+             
+              <breadCrumb title="GMT" url="https://collyking.top/categories/GMT/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>https://collyking.top/2019/54652.html</loc>
-    <lastmod>2019-02-13T14:38:41.319Z</lastmod>
+    <lastmod>2019-02-13T15:17:02.635Z</lastmod>
     <data>
         <display>
         <title>「GMT」How to plot fault geometry with coseismic displacement by GMT</title>
@@ -16,10 +37,14 @@
          
          
            
+             
+              <breadCrumb title="GMT" url="https://collyking.top/categories/GMT/"/>
+          
         </display>
     </data>
     </url>
 
+    
     
   <url>
     <loc>https://collyking.top/2019/10658.html</loc>
@@ -115,28 +140,6 @@
            
              
               <breadCrumb title="Pylith" url="https://collyking.top/categories/Pylith/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://collyking.top/2018/39230.html</loc>
-    <lastmod>2018-06-26T07:41:56.694Z</lastmod>
-    <data>
-        <display>
-        <title>「GMT」利用GMT绘制全球热流值分布</title>
-        <pubTime>2018-06-17T13:28:51.000Z</pubTime>
-        
-        <tag>GMT</tag>
-         
-        <tag>geothermal</tag>
-         
-         
-           
-             
-              <breadCrumb title="gmt" url="https://collyking.top/categories/gmt/"/>
           
         </display>
     </data>
