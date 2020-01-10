@@ -4,6 +4,66 @@
 
     
   <url>
+    <loc>https://collyking.top/2020/61483.html</loc>
+    <lastmod>2020-01-10T07:58:38.412Z</lastmod>
+    <data>
+        <display>
+        <title>「Pylith」Simple tutorial (III) Model simulation</title>
+        <pubTime>2020-01-10T07:40:01.000Z</pubTime>
+        
+        <tag>Pylith</tag>
+         
+         
+           
+             
+              <breadCrumb title="Pylith" url="https://collyking.top/categories/Pylith/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://collyking.top/2020/24164.html</loc>
+    <lastmod>2020-01-10T07:58:23.520Z</lastmod>
+    <data>
+        <display>
+        <title>「Pylith」Simple tutorial (II) Model set up</title>
+        <pubTime>2020-01-10T07:31:38.000Z</pubTime>
+        
+        <tag>Pylith</tag>
+         
+         
+           
+             
+              <breadCrumb title="Pylith" url="https://collyking.top/categories/Pylith/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://collyking.top/2020/25111.html</loc>
+    <lastmod>2020-01-10T07:58:12.600Z</lastmod>
+    <data>
+        <display>
+        <title>「Pylith」Simple tutorial (I) Installing softwares</title>
+        <pubTime>2020-01-10T07:30:16.000Z</pubTime>
+        
+        <tag>Pylith</tag>
+         
+         
+           
+             
+              <breadCrumb title="Pylith" url="https://collyking.top/categories/Pylith/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://collyking.top/2018/39230.html</loc>
     <lastmod>2019-02-13T15:17:26.408Z</lastmod>
     <data>
@@ -27,7 +87,7 @@
     
   <url>
     <loc>https://collyking.top/2019/54652.html</loc>
-    <lastmod>2019-02-13T15:17:02.635Z</lastmod>
+    <lastmod>2019-02-13T15:17:02.000Z</lastmod>
     <data>
         <display>
         <title>「GMT」How to plot fault geometry with coseismic displacement by GMT</title>
@@ -48,7 +108,7 @@
     
   <url>
     <loc>https://collyking.top/2019/10658.html</loc>
-    <lastmod>2019-02-13T14:34:20.605Z</lastmod>
+    <lastmod>2019-02-13T14:34:20.000Z</lastmod>
     <data>
         <display>
         <title>「matlab」一行命令输出超清矢量图</title>
@@ -68,7 +128,7 @@
     
   <url>
     <loc>https://collyking.top/2018/13809.html</loc>
-    <lastmod>2018-12-27T15:09:25.614Z</lastmod>
+    <lastmod>2018-12-27T15:09:25.000Z</lastmod>
     <data>
         <display>
         <title>「hardware」给暗影精灵2pro更换4k屏幕</title>
@@ -87,28 +147,8 @@
 
     
   <url>
-    <loc>https://collyking.top/2018/28917.html</loc>
-    <lastmod>2018-12-27T14:35:54.067Z</lastmod>
-    <data>
-        <display>
-        <title>「Pylith」简单教程(一)--Trelis建立网格模型</title>
-        <pubTime>2018-08-04T12:10:45.000Z</pubTime>
-        
-        <tag>Pylith</tag>
-         
-         
-           
-             
-              <breadCrumb title="Pylith" url="https://collyking.top/categories/Pylith/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://collyking.top/2018/31891.html</loc>
-    <lastmod>2018-08-04T13:35:15.028Z</lastmod>
+    <lastmod>2018-08-04T13:35:15.000Z</lastmod>
     <data>
         <display>
         <title>「Pylith」常见报错及解决方案(不定期更新)</title>
@@ -196,9 +236,9 @@
         <title>「blog」linux环境下Hexo博客的恢复</title>
         <pubTime>2018-03-24T13:41:05.000Z</pubTime>
         
-        <tag>blog</tag>
-         
         <tag>linux</tag>
+         
+        <tag>blog</tag>
          
          
            
