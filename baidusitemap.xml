@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://collyking.top/2019/54652.html</loc>
+    <lastmod>2020-01-18T09:39:51.709Z</lastmod>
+    <data>
+        <display>
+        <title>「GMT」How to plot fault geometry with coseismic displacement by GMT</title>
+        <pubTime>2019-02-12T12:59:29.000Z</pubTime>
+        
+        <tag>GMT</tag>
+         
+         
+           
+             
+              <breadCrumb title="GMT" url="https://collyking.top/categories/GMT/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://collyking.top/2020/25111.html</loc>
     <lastmod>2020-01-11T09:01:54.959Z</lastmod>
     <data>
@@ -74,26 +94,6 @@
         <tag>GMT</tag>
          
         <tag>geothermal</tag>
-         
-         
-           
-             
-              <breadCrumb title="GMT" url="https://collyking.top/categories/GMT/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://collyking.top/2019/54652.html</loc>
-    <lastmod>2019-02-13T15:17:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>「GMT」How to plot fault geometry with coseismic displacement by GMT</title>
-        <pubTime>2019-02-12T12:59:29.000Z</pubTime>
-        
-        <tag>GMT</tag>
          
          
            
@@ -209,26 +209,6 @@
 
     
   <url>
-    <loc>https://collyking.top/2018/10767.html</loc>
-    <lastmod>2018-04-30T13:24:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>「hackintosh」解决黑苹果在终端下delete键失效问题</title>
-        <pubTime>2018-04-28T08:28:18.000Z</pubTime>
-        
-        <tag>hackintosh</tag>
-         
-         
-           
-             
-              <breadCrumb title="hackintosh" url="https://collyking.top/categories/hackintosh/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://collyking.top/2018/10407.html</loc>
     <lastmod>2018-04-30T13:23:32.000Z</lastmod>
     <data>
@@ -236,9 +216,9 @@
         <title>「blog」linux环境下Hexo博客的恢复</title>
         <pubTime>2018-03-24T13:41:05.000Z</pubTime>
         
-        <tag>linux</tag>
-         
         <tag>blog</tag>
+         
+        <tag>linux</tag>
          
          
            
