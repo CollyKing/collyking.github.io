@@ -1,38 +1,953 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta name="google-site-verification" content="5rHjz-eGZ-TyGu184pR_2oTXrTNV5p2B54i9_4yAGDU" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="GMT," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="CollyKing's Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="The very important thing about our researches are fault slip and GPS data. This webpage is aiming at showing how to plot these two things by GMT.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「GMT」How to plot fault geometry with coseismic displacement by GMT">
+<meta property="og:url" content="https://collyking.top/2019/54652.html">
+<meta property="og:site_name" content="CollyKing&#39;s Blog">
+<meta property="og:description" content="The very important thing about our researches are fault slip and GPS data. This webpage is aiming at showing how to plot these two things by GMT.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2019/02/12/5c62bfb36da24.png">
+<meta property="article:published_time" content="2019-02-12T12:59:29.000Z">
+<meta property="article:modified_time" content="2020-01-18T09:39:51.000Z">
+<meta property="article:author" content="collyking">
+<meta property="article:tag" content="GMT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/02/12/5c62bfb36da24.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://collyking.top/2019/54652.html"/>
+
+
+
+
+
+  <title>「GMT」How to plot fault geometry with coseismic displacement by GMT | CollyKing's Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-120906176-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?71aaf6e0dcc6e1ca17166f8ea1d8d1c9";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CollyKing's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Stay hungry, stay foolish</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://collyking.top/2019/54652.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://i.loli.net/2017/08/24/599ea0e05f155.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CollyKing's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">「GMT」How to plot fault geometry with coseismic displacement by GMT</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-12T20:59:29+08:00">
+                2019-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GMT/" itemprop="url" rel="index">
+                    <span itemprop="name">GMT</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/54652.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2019/54652.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/54652.html" class="leancloud_visitors" data-flag-title="「GMT」How to plot fault geometry with coseismic displacement by GMT">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  The very important thing about our researches are fault slip and GPS data. This webpage is aiming at showing how to plot these two things by GMT.
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="/download/Plot_fault_slip.zip" title="GMT example">Click here to download example files</a></p>
+<h2 id="Mainly-commands"><a href="#Mainly-commands" class="headerlink" title="Mainly commands:"></a>Mainly commands:</h2><ul>
+<li><code>psxy</code>    - to plot fault geometry with fault slip</li>
+<li><code>pscoast</code> - to plot basemap</li>
+<li><code>psvelo</code>  - to plot GPS velocity</li>
+</ul>
+<h2 id="Material-needed："><a href="#Material-needed：" class="headerlink" title="Material needed："></a>Material needed：</h2><ol>
+<li>Fault_geo1.dat: Fault geometry 1 with coseismic slip</li>
+<li>Fault_geo2.dat: Fault geometry 2 with coseismic slip</li>
+<li>GPS_coseis.dat: GPS data corresponding to the coseismic slip.</li>
+<li>Plot_fault.ksh: Plotting script.</li>
+</ol>
+<h2 id="Material-Format"><a href="#Material-Format" class="headerlink" title="Material Format"></a>Material Format</h2><p>The format for Fault_geo*.dat is</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-Z <span class="variable">$&#123;slip magnitute&#125;</span></span><br><span class="line"><span class="variable">$&#123;lon1&#125;</span> <span class="variable">$&#123;lat1&#125;</span></span><br><span class="line"><span class="variable">$&#123;lon2&#125;</span> <span class="variable">$&#123;lat2&#125;</span></span><br><span class="line"><span class="variable">$&#123;lon3&#125;</span> <span class="variable">$&#123;lat3&#125;</span></span><br><span class="line"><span class="variable">$&#123;lon4&#125;</span> <span class="variable">$&#123;lat4&#125;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>The format for GPS_coseis.dat is</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$&#123;lon&#125;</span>  <span class="variable">$&#123;lat&#125;</span> <span class="variable">$&#123;east_component&#125;</span> <span class="variable">$&#123;north_component&#125;</span> <span class="variable">$&#123;east_significant&#125;</span> <span class="variable">$&#123;noth_significant&#125;</span> </span><br></pre></td></tr></table></figure>
+<h2 id="Plotting-script"><a href="#Plotting-script" class="headerlink" title="Plotting script"></a>Plotting script</h2><p>Next we’ll mainly focus on our plotting script.</p>
+<h3 id="1-Give-name-to-some-initial-parameters"><a href="#1-Give-name-to-some-initial-parameters" class="headerlink" title="1. Give name to some initial parameters"></a>1. Give name to some initial parameters</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">ps=plot.ps</span><br><span class="line">fault_geo1=fault_geo1.dat</span><br><span class="line">fault_geo2=fault_geo2.dat</span><br><span class="line">gps_name=GPS_coseis.dat</span><br><span class="line">cpt=fault_slip.cpt</span><br><span class="line">R=-157/-144/55/62</span><br><span class="line">J=M5i</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Plot-basic-picture"><a href="#2-Plot-basic-picture" class="headerlink" title="2. Plot basic picture"></a>2. Plot basic picture</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gmt makecpt -Chot.cpt -G0.4/1 -Ic -T0/22 &gt; <span class="variable">$cpt</span></span><br><span class="line">gmt pscoast -R<span class="variable">$R</span> -J<span class="variable">$J</span> -Bx4 -By2 -Da -G229/195/148 -S156/233/253 -K -P &gt; <span class="variable">$ps</span></span><br></pre></td></tr></table></figure>
+<p>Using makecpt to define the colormap: Choose <code>hot</code> colormaphen, cut the range to 0.4<del>1 with <code>-G</code>, invert colormap with <code>-Ic</code>, choose 0</del>22m’s slip range with <code>-G</code>, finally output to <code>$cpt</code>.(see <a target="_blank" rel="noopener" href="https://docs.gmt-china.org/latest/cpt/generate-cpt/">makecpt</a>)<br>Using pscoast to plot the land and ocean with different color.(see <a target="_blank" rel="noopener" href="http://gmt.soest.hawaii.edu/doc/5.3.2/pscoast.html">pscoast</a>)</p>
+<h3 id="3-Plot-fault-geometry"><a href="#3-Plot-fault-geometry" class="headerlink" title="3. Plot fault geometry"></a>3. Plot fault geometry</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gmt psxy <span class="variable">$fault_geo1</span> -R<span class="variable">$R</span> -J<span class="variable">$J</span>  -W0.1p -L -C<span class="variable">$cpt</span> -O -K &gt;&gt; <span class="variable">$ps</span></span><br><span class="line">gmt psxy <span class="variable">$fault_geo2</span> -R<span class="variable">$R</span> -J<span class="variable">$J</span>  -W0.1p -L -C<span class="variable">$cpt</span> -O -K &gt;&gt; <span class="variable">$ps</span></span><br><span class="line">gmt psscale -D3.5i/0.5i+w2.5i/0.25i+h+jCT+m -C<span class="variable">$cpt</span> \</span><br><span class="line">        -Bx5+l<span class="string">&quot;Coseismic slip (m)&quot;</span> -O -K -P &gt;&gt; <span class="variable">$ps</span></span><br><span class="line">gmt pscoast -R<span class="variable">$R</span> -J<span class="variable">$J</span> -Bx4 -By2 -Da -W229/195/148 -O -K -P &gt;&gt; <span class="variable">$ps</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Here we use psxy to plot the fault geometry, giving different color to fault patches according to slip maganitude and assigned colormap.(see <a target="_blank" rel="noopener" href="http://gmt.soest.hawaii.edu/doc/5.3.2/psxy.html">psxy</a>)<br>And we plot the coast line again to avoid everything being covered by fault geometry.</p>
+<h3 id="4-Plot-GPS-vectors"><a href="#4-Plot-GPS-vectors" class="headerlink" title="4. Plot GPS vectors"></a>4. Plot GPS vectors</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    awk <span class="string">&#x27;&#123;print $1,$2,$3,$4,$5,$6,0.0&#125;&#x27;</span> <span class="variable">$&#123;gps_name&#125;</span> |\</span><br><span class="line">    gmt psvelo    -R<span class="variable">$&#123;R&#125;</span>  -W0.25p,black  -Gblack  -L  -Se0.3c/0.95/25  -J<span class="variable">$&#123;J&#125;</span> -A0.3c+p1.5p+e -P -V -O -K &gt;&gt; <span class="variable">$ps</span></span><br><span class="line"></span><br><span class="line">    gmt psvelo &lt;&lt;<span class="string">END  -h2  -R$&#123;R&#125;  -W0.25p,black  -Gblack  -L  -Se0.3c/0.95/12 -J$&#123;J&#125; -A0.3c+p1.5p+e -P -V -O  &gt;&gt; $ps</span></span><br><span class="line"><span class="string">         Long.   Lat.   Evel   Nvel   Esig   Nsig  CorEN SITE</span></span><br><span class="line"><span class="string">          (deg)  (deg)    (m)        (m)</span></span><br><span class="line"><span class="string">      -155.5      61.5     2.0    0      0     0     0     2m</span></span><br><span class="line"><span class="string">END</span></span><br></pre></td></tr></table></figure>
+<p>We use psvelo to plot GPS displacement with the first two lines.(see <a target="_blank" rel="noopener" href="http://gmt.soest.hawaii.edu/doc/5.3.2/supplements/meca/psvelo.html">psvelo</a>)<br>The left 5 lines are used to plot displacement’s legend.</p>
+<h3 id="5-Convert-to-png"><a href="#5-Convert-to-png" class="headerlink" title="5. Convert to png"></a>5. Convert to png</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gmt psconvert <span class="variable">$ps</span> -A -Tg</span><br><span class="line">rm <span class="variable">$ps</span> gmt.* <span class="variable">$cpt</span></span><br></pre></td></tr></table></figure>
+<p>Finally, we can convert the <code>.ps</code> file to <code>.png</code> file for better Visualization and remove files we don’t need anymore.</p>
+<p>The output picture should looks like this.</p>
+<div align=center>
+<img src="https://i.loli.net/2019/02/12/5c62bfb36da24.png" width="70%" height="70%">
+</div>
+And this is just a simple example for a quick start, you can change and add whatever you like once you get used to the GMT software. Good luck!
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GMT/" rel="tag"># GMT</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/31891.html" rel="next" title="「Pylith」常见报错及解决方案(不定期更新)">
+                <i class="fa fa-chevron-left"></i> 「Pylith」常见报错及解决方案(不定期更新)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10658.html" rel="prev" title="「matlab」一行命令输出超清矢量图">
+                「matlab」一行命令输出超清矢量图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://i.loli.net/2017/08/24/599ea0e05f155.jpg"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mainly-commands"><span class="nav-number">1.</span> <span class="nav-text">Mainly commands:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Material-needed%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">Material needed：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Material-Format"><span class="nav-number">3.</span> <span class="nav-text">Material Format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plotting-script"><span class="nav-number">4.</span> <span class="nav-text">Plotting script</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Give-name-to-some-initial-parameters"><span class="nav-number">4.1.</span> <span class="nav-text">1. Give name to some initial parameters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Plot-basic-picture"><span class="nav-number">4.2.</span> <span class="nav-text">2. Plot basic picture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Plot-fault-geometry"><span class="nav-number">4.3.</span> <span class="nav-text">3. Plot fault geometry</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Plot-GPS-vectors"><span class="nav-number">4.4.</span> <span class="nav-text">4. Plot GPS vectors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Convert-to-png"><span class="nav-number">4.5.</span> <span class="nav-text">5. Convert to png</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">collyking</span>
+
+  
+  <div class="powered-by">
+  </div>
+  <span>Hosted by <a target="_blank" rel="noopener" href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="noopener" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" rel="noopener" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://collyking.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://collyking.top/2019/54652.html';
+          this.page.identifier = '2019/54652.html';
+          this.page.title = '「GMT」How to plot fault geometry with coseismic displacement by GMT';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://collyking.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("bkpkIr9LF8yXdIwgSbybzFo8-gzGzoHsz", "BT3VkhllMRRtaOuOzzjbCNOL");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
